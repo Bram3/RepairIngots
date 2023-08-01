@@ -1,0 +1,20 @@
+# DO NOT CHANGE THIS
+config-version: 1
+
+ingots:
+  copper:
+    name: "&cCopper Repair Ingot"
+    lore:
+      - ""
+      - This ingot adds 50 durability to your item.
+    durability: 50
+    percentage: false
+    item: COPPER_INGOT
+  iron:
+    name: "&aIron Repair Ingot"
+    lore:
+      - ""
+      - This ingot adds 50% of your item's max durability to your item.
+    durability: 50
+    percentage: true
+    item: IRON_INGOT

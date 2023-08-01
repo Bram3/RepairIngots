@@ -1,0 +1,9 @@
+# DO NOT CHANGE THIS
+config-version: 1
+
+error_messages:
+  no_player_specified: "&cYou must specify a player for the operation."
+  not_a_valid_player: "&cThe player specified is not valid."
+  no_ingot_specified: "&cYou must specify an ingot for the operation."
+  not_a_valid_ingot: "&cThe ingot specified is not valid."
+  not_a_valid_number: "&cYou must specify a valid number for the operation."

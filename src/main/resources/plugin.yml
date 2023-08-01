@@ -1,0 +1,4 @@
+name: RepairIngots
+version: '${project.version}'
+main: com.github.bram3.repairingots.RepairIngots
+api-version: '1.19'
