@@ -11,10 +11,8 @@ public final class RepairIngots extends JavaPlugin {
     @Override
     public void onEnable() {
         Config config = new Config(this);
-        IngotManager ingotManager = new IngotManager(config, this);
+        IngotManager ingotManager = new IngotManager(config);
         new GiveIngotCommand(this, config, ingotManager);
         getServer().getPluginManager().registerEvents(new InventoryClickEvent(ingotManager), this);
     }
-
-
 }

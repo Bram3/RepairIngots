@@ -3,7 +3,6 @@ package com.github.bram3.repairingots.events;
 import com.github.bram3.repairingots.items.Ingot;
 import com.github.bram3.repairingots.managers.IngotManager;
 import org.bukkit.GameMode;
-import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -31,7 +30,11 @@ public class InventoryClickEvent implements Listener {
         Player player = (Player) event.getWhoClicked();
         if (player.getGameMode() == GameMode.CREATIVE) return;
 
-        ingot.repairItem(event.getCurrentItem());
+        try {
+            ingot.repairItem(event.getCurrentItem());
+        } catch (Exception e) {
+            return;
+        }
         if (event.getCursor().getAmount() == 1) {
             player.setItemOnCursor(null);
         } else {

@@ -1,6 +1,5 @@
 package com.github.bram3.repairingots.managers;
 
-import com.github.bram3.repairingots.RepairIngots;
 import com.github.bram3.repairingots.config.Config;
 import com.github.bram3.repairingots.items.Ingot;
 import com.github.justadeni.HexColorLib;
@@ -14,15 +13,10 @@ import java.util.HashMap;
 import java.util.List;
 
 public class IngotManager {
-    private final Config config;
-    private final RepairIngots repairIngots;
 
     private final HashMap<String, Ingot> ingots = new HashMap<>();
 
-    public IngotManager(Config config, RepairIngots repairIngots) {
-        this.config = config;
-        this.repairIngots = repairIngots;
-
+    public IngotManager(Config config) {
         Section section = config.configDocument.getSection("ingots");
         for (Object key : section.getKeys()) {
             List<String> lore = new ArrayList<>();

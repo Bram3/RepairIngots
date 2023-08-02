@@ -18,6 +18,7 @@ public class Ingot {
         item = new ItemStack(material);
         this.sound = sound;
         ItemMeta meta = item.getItemMeta();
+        assert meta != null;
         meta.setDisplayName(name);
         meta.setLore(lore);
         item.setItemMeta(meta);
@@ -29,7 +30,7 @@ public class Ingot {
         return item;
     }
 
-    public ItemStack repairItem(ItemStack item) {
+    public void repairItem(ItemStack item) throws Exception {
         int repairDamage = durability;
         int maxDurability = item.getType().getMaxDurability();
         if (percentage) {
@@ -37,10 +38,12 @@ public class Ingot {
         }
 
         Damageable itemMeta = (Damageable) item.getItemMeta();
+        if (itemMeta == null) {
+            throw new Exception("Invalid item");
+        }
         int newDamage = itemMeta.getDamage() - repairDamage;
         itemMeta.setDamage(Math.max(newDamage, 0));
         item.setItemMeta(itemMeta);
-        return item;
     }
 
     public Sound getSound() {
