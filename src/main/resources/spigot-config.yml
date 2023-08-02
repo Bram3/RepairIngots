@@ -10,6 +10,7 @@ ingots:
     durability: 50
     percentage: false
     item: COPPER_INGOT
+    sound: BLOCK_ANVIL_USE
   iron:
     name: "&aIron Repair Ingot"
     lore:
@@ -18,3 +19,4 @@ ingots:
     durability: 50
     percentage: true
     item: IRON_INGOT
+    sound: BLOCK_ANVIL_USE

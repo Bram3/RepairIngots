@@ -3,6 +3,7 @@ package com.github.bram3.repairingots.events;
 import com.github.bram3.repairingots.items.Ingot;
 import com.github.bram3.repairingots.managers.IngotManager;
 import org.bukkit.GameMode;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -39,6 +40,7 @@ public class InventoryClickEvent implements Listener {
             player.setItemOnCursor(newIngot);
         }
         player.updateInventory();
+        player.playSound(player.getLocation(), ingot.getSound(), 1.0F, 1.0F);
         event.setCancelled(true);
 
     }

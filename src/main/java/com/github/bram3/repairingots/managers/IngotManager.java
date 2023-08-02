@@ -6,6 +6,7 @@ import com.github.bram3.repairingots.items.Ingot;
 import com.github.justadeni.HexColorLib;
 import dev.dejvokep.boostedyaml.block.implementation.Section;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -33,7 +34,8 @@ public class IngotManager {
                     lore,
                     Material.getMaterial(section.getString(key + ".item")),
                     section.getInt(key + ".durability"),
-                    section.getBoolean(key + ".percentage"));
+                    section.getBoolean(key + ".percentage"),
+                    Sound.valueOf(section.getString(key + ".sound")));
             ingots.put(key.toString(), ingot);
         }
     }
